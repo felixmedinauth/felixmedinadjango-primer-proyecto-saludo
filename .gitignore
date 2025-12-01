@@ -5,9 +5,14 @@ db.sqlite3
 /staticfiles/
 /media/
 .env
+
+# Entornos virtuales (¡IMPORTANTE!)
+env/
+venv/
+
 # VSCode
 .vscode/
-# MacOS
+
+# OS
 .DS_Store
-# Windows
 Thumbs.db
