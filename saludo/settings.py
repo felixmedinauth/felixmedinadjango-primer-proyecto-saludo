@@ -76,8 +76,14 @@ WSGI_APPLICATION = 'saludo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'felixmedinau1sal$saludo_db',  # <--- Tu nombre de DB en PA
+        'USER': 'felixmedinau1sal',            # <--- Tu usuario de PA
+        'PASSWORD': 'carlosafm1',     # <--- La que creaste en el paso 1
+        'HOST': 'tu_usuario.mysql.pythonanywhere-services.com', # <--- Tu Host
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
     }
 }
 
