@@ -1,6 +1,51 @@
-body { font-family: 'Roboto', sans-serif; padding: 20px; background: #f0f0f0; }
-h1 { color: #333; }
-.saludo { padding: 10px; margin: 10px 0; border-left: 5px solid #ccc; background: #fff; }
-.saludo.tipo-feliz { border-left-color: #28a745; }
-.saludo.tipo-triste { border-left-color: #dc3545; }
-.no-saludo { color: #777; font-style: italic; }
+body { font-family: 'Roboto', sans-serif; padding: 30px; background: #f1f3f4; }
+
+/* Page container */
+.container {
+	max-width: 780px;
+	margin: 0 auto;
+}
+
+/* Header */
+h1 {
+	text-align: center;
+	font-size: 36px;
+	color: #333;
+	margin: 18px 0 28px 0;
+	padding: 18px 0;
+	background: linear-gradient(#eef1f2, #f7f8f9);
+	border-radius: 6px;
+	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+}
+
+/* Card list */
+.lista-saludos { display: grid; gap: 18px; }
+
+.saludo {
+	position: relative;
+	background: #ffffff;
+	padding: 28px 24px;
+	border-radius: 8px;
+	box-shadow: 0 6px 12px rgba(35,47,55,0.06);
+	overflow: hidden;
+}
+
+/* Colored vertical stripe on the left */
+.saludo:before {
+	content: '';
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	bottom: 10px;
+	width: 6px;
+	border-radius: 6px;
+	background: #cccccc;
+}
+
+.saludo p { margin: 0; text-align: center; color: #222; }
+
+.saludo.tipo-feliz:before { background: #28a745; }
+.saludo.tipo-triste:before { background: #dc3545; }
+.saludo.tipo-normal:before { background: #2bb673; }
+
+.no-saludo { color: #777; font-style: italic; text-align: center; }
