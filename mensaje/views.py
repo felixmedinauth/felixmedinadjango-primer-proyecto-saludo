@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-def saludo(request):
- return HttpResponse("Hola desde Django, listo para PythonAnywhere!")
+from .models import Saludo
 
+def saludo(request):
+    saludos = Saludo.objects.all().order_by('-id') # Muestra los últimos primero
+    return render(request, 'saludos/saludo.html', {'saludos': saludos})

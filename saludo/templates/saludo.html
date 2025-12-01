@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Saludo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'saludos/css/estilo.css' %}">
+</head>
+<body>
+    <h1>Mensajes de Saludo</h1>
+    {% if saludos %}
+        {% for saludo in saludos %}
+            <div class="saludo {% if saludo.tipo %}tipo-{{ saludo.tipo }}{% endif %}">
+                <p>{{ saludo.texto }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="no-saludo">No hay saludos disponibles.</p>
+    {% endif %}
+</body>
+</html>
